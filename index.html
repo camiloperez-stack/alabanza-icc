@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Alabanza ICC Casa de Pan</title>
   
   <!-- Fuente Poppins + JetBrains Mono -->
@@ -28,7 +28,7 @@
       font-family: 'Poppins', sans-serif; 
       background-color: var(--bg-dark); 
       color: var(--text-main); 
-      padding: 40px 15px; 
+      padding: 16px 12px; 
       min-height: 100vh;
       position: relative;
       overflow-x: hidden;
@@ -38,56 +38,30 @@
       background-attachment: fixed;
     }
 
-    /* Elementos Vectoriales Lineales Amarillos en Fondo */
-    .vector-bg-1 {
-      position: absolute;
-      top: 50px;
-      left: -40px;
-      width: 180px;
-      height: 180px;
-      border: 2px dashed rgba(250, 204, 21, 0.25);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .vector-bg-2 {
-      position: absolute;
-      bottom: 80px;
-      right: -30px;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(250, 204, 21, 0.18);
-      transform: rotate(45deg);
-      pointer-events: none;
-      z-index: 0;
-    }
-
     .container { 
       position: relative;
       z-index: 10;
-      max-width: 900px; 
+      max-width: 850px; 
       margin: 0 auto; 
       background: var(--card-bg); 
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      padding: 40px 36px; 
-      border-radius: 28px; 
-      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(250, 204, 21, 0.08); 
+      padding: 24px 18px; 
+      border-radius: 24px; 
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); 
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    /* Encabezado con juego tipográfico 300 Light vs 900 Black */
-    .header { text-align: center; margin-bottom: 36px; position: relative; }
+    /* Encabezado adaptable */
+    .header { text-align: center; margin-bottom: 24px; position: relative; }
     
-    /* Figura vectorial sobre el título */
     .header::before {
       content: '';
       position: absolute;
-      top: -15px;
+      top: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 60px;
+      width: 50px;
       height: 3px;
       background: var(--accent-yellow);
       border-radius: 2px;
@@ -96,20 +70,20 @@
 
     .header .sub-brand { 
       font-weight: 300; 
-      font-size: 14px; 
-      letter-spacing: 6px; 
+      font-size: 11px; 
+      letter-spacing: 4px; 
       color: var(--accent-yellow); 
       text-transform: uppercase;
       margin-bottom: 2px;
     }
 
     .header h1 { 
-      font-size: 34px; 
+      font-size: clamp(20px, 6vw, 32px); 
       font-weight: 900; 
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
       text-transform: uppercase;
-      line-height: 1.1;
-      margin-bottom: 6px;
+      line-height: 1.15;
+      margin-bottom: 4px;
       background: linear-gradient(135deg, #ffffff 40%, var(--accent-yellow));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -117,91 +91,94 @@
 
     .header p { 
       color: var(--text-muted); 
-      font-size: 12px; 
+      font-size: 10px; 
       font-weight: 300; 
       text-transform: uppercase; 
-      letter-spacing: 3px; 
+      letter-spacing: 2px; 
     }
 
-    .selector-box { margin-bottom: 28px; }
+    .selector-box { margin-bottom: 20px; }
     .selector-box label { 
       display: block; 
-      font-size: 11px; 
+      font-size: 10px; 
       font-weight: 700; 
       color: var(--accent-yellow); 
       text-transform: uppercase; 
-      letter-spacing: 2px; 
-      margin-bottom: 10px; 
+      letter-spacing: 1.5px; 
+      margin-bottom: 6px; 
     }
     select { 
       width: 100%; 
-      padding: 18px 22px; 
-      border-radius: 16px; 
+      padding: 14px 16px; 
+      border-radius: 14px; 
       background: #0d1322; 
       color: #ffffff; 
       border: 1px solid rgba(250, 204, 21, 0.3); 
-      font-size: 16px; 
+      font-size: 15px; 
       font-weight: 600;
       font-family: 'Poppins', sans-serif;
       outline: none;
       cursor: pointer;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
       transition: all 0.3s ease;
     }
-    select:focus { border-color: var(--accent-yellow); box-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
 
     .video-container { 
       position: relative; 
       padding-bottom: 56.25%; 
       height: 0; 
       overflow: hidden; 
-      border-radius: 22px; 
-      margin-bottom: 30px; 
+      border-radius: 18px; 
+      margin-bottom: 20px; 
       border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
     }
     .video-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
 
+    /* Panel de control resuelto para móviles */
     .controls { 
       display: flex; 
-      flex-wrap: wrap;
-      gap: 16px; 
+      flex-direction: column;
+      gap: 14px; 
       align-items: center; 
       background: rgba(13, 19, 34, 0.9); 
-      padding: 22px 28px; 
-      border-radius: 20px; 
-      margin-bottom: 30px; 
-      justify-content: space-between; 
+      padding: 16px; 
+      border-radius: 18px; 
+      margin-bottom: 20px; 
       border: 1px solid rgba(250, 204, 21, 0.2);
     }
-    .transpose-status { font-size: 14px; font-weight: 300; color: var(--text-muted); }
-    .transpose-status span { color: var(--accent-yellow); font-weight: 800; font-size: 18px; margin-left: 4px; }
+    .transpose-status { font-size: 13px; font-weight: 300; color: var(--text-muted); text-align: center; }
+    .transpose-status span { color: var(--accent-yellow); font-weight: 800; font-size: 16px; }
 
-    .btn-group { display: flex; gap: 10px; }
+    .btn-group { 
+      display: flex; 
+      width: 100%; 
+      gap: 8px; 
+      justify-content: space-between; 
+    }
     button { 
+      flex: 1;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); 
       color: white; 
       border: none; 
-      padding: 12px 22px; 
-      border-radius: 12px; 
+      padding: 12px 6px; 
+      border-radius: 10px; 
       cursor: pointer; 
       font-family: 'Poppins', sans-serif;
       font-weight: 700; 
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+      font-size: 12px;
+      text-align: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 10px rgba(79, 172, 254, 0.3);
     }
-    button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(127, 0, 255, 0.5); }
     button.reset { background: #334155; box-shadow: none; font-weight: 400; }
-    button.reset:hover { background: #475569; }
 
-    /* Tarjeta con acento lineal amarillo */
+    /* Tarjeta de información */
     .info-card { 
       position: relative;
       background: rgba(13, 19, 34, 0.95); 
-      padding: 30px; 
-      border-radius: 22px; 
+      padding: 20px 16px; 
+      border-radius: 18px; 
       border: 1px solid rgba(255, 255, 255, 0.08);
       overflow: hidden;
     }
@@ -215,49 +192,54 @@
       background: linear-gradient(90deg, var(--accent-yellow), var(--accent-cyan));
     }
 
-    .song-title { font-size: 26px; font-weight: 900; color: #ffffff; margin-bottom: 4px; letter-spacing: -0.5px; }
-    .key-info { font-size: 14px; font-weight: 300; color: var(--text-muted); margin-bottom: 22px; }
+    .song-title { font-size: clamp(18px, 5vw, 22px); font-weight: 800; color: #ffffff; margin-bottom: 4px; line-height: 1.2; }
+    .key-info { font-size: 13px; font-weight: 300; color: var(--text-muted); margin-bottom: 16px; }
     .key-info strong { color: var(--accent-yellow); font-weight: 700; }
 
-    .chords-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+    .chords-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
     .chords-display { 
       font-family: 'JetBrains Mono', monospace; 
       background: #050811; 
-      padding: 20px 26px; 
-      border-radius: 16px; 
+      padding: 14px; 
+      border-radius: 14px; 
       color: var(--accent-yellow); 
-      font-size: 24px; 
+      font-size: clamp(16px, 4.5vw, 20px); 
       font-weight: 700;
-      letter-spacing: 4px; 
+      letter-spacing: 2px; 
       border: 1px dashed rgba(250, 204, 21, 0.3);
-      margin-bottom: 26px;
-      box-shadow: 0 0 20px rgba(250, 204, 21, 0.05);
+      margin-bottom: 18px;
+      text-align: center;
+      word-break: break-word;
     }
 
     .btn-link { 
-      display: inline-flex; 
+      display: flex; 
+      justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      width: 100%;
       background: var(--accent-yellow); 
       color: #070913; 
       text-decoration: none; 
-      padding: 14px 28px; 
-      border-radius: 14px; 
+      padding: 14px 16px; 
+      border-radius: 12px; 
       font-weight: 800; 
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 18px rgba(250, 204, 21, 0.3);
+      box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
     }
-    .btn-link:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(250, 204, 21, 0.5); }
+
+    @media (min-width: 600px) {
+      .container { padding: 36px; }
+      .controls { flex-direction: row; }
+      .btn-group { width: auto; }
+      button { padding: 12px 20px; font-size: 13px; }
+      .btn-link { width: auto; display: inline-flex; }
+    }
   </style>
 </head>
 <body>
-
-<!-- Elementos vectoriales lineales amarillos de fondo -->
-<div class="vector-bg-1"></div>
-<div class="vector-bg-2"></div>
 
 <div class="container">
   <div class="header">
@@ -386,7 +368,7 @@
     document.getElementById("currentKey").innerText = `${nuevoTono} (${semitonosActuales === 0 ? 'Original' : 'Transpuesto'})`;
 
     let nuevosAcordes = song.acordes.map(a => transponerNota(a, semitonosActuales));
-    document.getElementById("chordsDisplay").innerText = nuevosAcordes.join("  —  ");
+    document.getElementById("chordsDisplay").innerText = nuevosAcordes.join(" — ");
   }
 
   cargarCancion();
